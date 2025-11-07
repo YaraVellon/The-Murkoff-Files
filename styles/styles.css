@@ -1,0 +1,533 @@
+/* === GENERAL === */
+body {
+  
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background 1s ease;
+}
+
+/* Efecto borroso + oscurecido sobre el fondo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  
+}
+
+body * {
+  position: relative;
+  z-index: 1;
+  
+}
+
+/* === PANTALLA DE ACCESO (terminal) === */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 1s ease;
+}
+
+#overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#terminal {
+  color: #00ff88;
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  white-space: pre;
+  text-align: left;
+}
+
+/* Parpadeo del cursor █ */
+.cursor {
+  display: inline-block;
+  animation: blink 0.9s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Ocultar overlay */
+#overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+#main-content {
+  font-family: Sohne Mono, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 1.5rem;
+  margin-top: 100px;
+  position: relative; 
+  display: block;
+  opacity: 1;
+}
+
+#main-content h1{
+  margin: 0 3rem;
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  color: #ffffff;
+  text-align: center;
+  
+  text-shadow: 0 0 6px #000000;
+}
+
+.hero h1{
+  letter-spacing: 7px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem 0 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Esta clase solo se usará en el home */
+.navbar.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+/* Logo */
+.nav-logo img {
+  height: 70px;
+  filter: brightness(0.9);
+}
+
+/* Enlaces */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-family: Sohne Mono, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #919272;
+}
+
+/* === DROPDOWN === */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(145, 146, 114, 0.5);
+  min-width: 180px;
+  box-shadow: 0 0 10px rgba(145, 146, 114, 0.3);
+  z-index: 200;
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 0;
+  animation: dropdownFade 0.3s ease forwards;
+}
+
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'VT323', monospace;
+  transition: all 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(145, 146, 114, 0.2);
+  color: #919272;
+  text-shadow: 0 0 5px #919272;
+}
+
+/* Mostrar el menú al pasar el ratón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Pequeña animación de aparición */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.scroll-hint {
+  font-family: 'VT323', monospace;
+  font-size: 2rem;
+  color: #ffffff;       /* verde típico de consola */
+  text-align: center;
+  margin-top: 2rem;
+  animation: blink 1s steps(2, start) infinite; /* parpadeo */
+}
+
+/* Animación parpadeo tipo terminal */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.08),
+    rgba(0, 255, 0, 0.08) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  z-index: 1000;
+  filter: blur(0.3px);
+}
+
+section { 
+  border: #919272 1px solid; 
+  margin: 20px; 
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: left;
+}
+
+
+section .text{
+  width: 33%;
+  padding: 1rem;
+  margin: 0;
+  text-align: left;
+}
+
+/* Contenedor de imágenes */
+.character-images {
+  margin: 20px;
+  position: relative;
+  width: 60%;
+  height: 400px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* Imágenes con efecto apilado y ligera inclinación */
+.character-images img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100px) rotate(var(--angle));
+  transition: all 0.8s ease;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 100%),
+    linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%) 0 0 / 8px 8px,
+    #1b1b1b; /* tono oscuro detrás */
+  filter: contrast(1.2) brightness(0.9);
+}
+
+/* Inclinaciones específicas */
+.character-images img:nth-child(1) {
+  right: 1rem;
+  --angle: 5deg;
+  z-index: 4;
+}
+.character-images img:nth-child(2) {
+  top: 0.4rem;
+  right: 15rem;
+  --angle: -3deg;
+  z-index: 3;
+}
+.character-images img:nth-child(3) {
+  right: 35rem;
+  --angle: 4deg;
+  z-index: 2;
+}
+.character-images img:nth-child(4) {
+  right: 54rem;
+  --angle: -2deg;
+  z-index: 1;
+}
+
+/* Cuando son visibles */
+.characters.visible .character-images img {
+  opacity: 1;
+  transform: translateX(0) rotate(var(--angle));
+}
+
+/* Efecto escalonado de aparición */
+.character-images img:nth-child(1) { transition-delay: 0.1s; }
+.character-images img:nth-child(2) { transition-delay: 0.3s; }
+.character-images img:nth-child(3) { transition-delay: 0.5s; }
+.character-images img:nth-child(4) { transition-delay: 0.7s; }
+
+.btn-access {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  font-family: Sohne Mono, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 1.4rem;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  background: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 8px #00ff8850;
+  transition: all 0.2s ease-in-out;
+  animation: blinkAccess 1.5s infinite steps(2, start);
+}
+
+.btn-access:hover {
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: 0 0 12px #00ff88;
+  animation: none;
+}
+
+@keyframes blinkAccess {
+  50% { opacity: 0.5; }
+}
+
+.maps-images {
+  margin: 20px;
+  position: relative;
+  width: 60%;
+  height: 400px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* Estado inicial: ocultas y desplazadas */
+.maps-images img {
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease;
+}
+
+/* Retraso progresivo en la aparición */
+.maps-images img:nth-child(1) { transition-delay: 0s; }
+.maps-images img:nth-child(2) { transition-delay: 0.2s; }
+.maps-images img:nth-child(3) { transition-delay: 0.4s; }
+.maps-images img:nth-child(4) { transition-delay: 0.6s; }
+
+/* Estado visible: se muestran y se deslizan hacia su posición */
+.maps.visible .maps-images img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tools-images{
+  align-content: center;
+}
+
+.tools-images img{
+  width: 170px;
+}
+
+.updates {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  gap: 2rem;
+  border: #919272 1px solid;
+  margin: 20px;
+}
+
+.updates-carousel {
+  position: relative;
+  width: 60%;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* El contenedor mantiene todas las imágenes en el mismo lugar */
+.updates-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Todas las imágenes se apilan unas sobre otras */
+.updates-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.updates-images img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #919272;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+.murkoff-footer {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #00ff88;
+  font-family: Sohne Mono, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  text-align: left;
+  padding: 2rem 2rem;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -2px 15px rgba(0, 255, 136, 0.05);
+}
+
+.footer-logo img {
+  height: 60px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.footer-text p {
+  margin: 0.4rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: #b0ffcf;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+}
+
+/* Cursor parpadeante tipo terminal */
+.cursor {
+  display: inline-block;
+  animation: blink 0.9s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Efecto leve de interferencia CRT */
+.murkoff-footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.04),
+    rgba(0, 255, 0, 0.04) 1px,
+    transparent 2px,
+    transparent 3px
+  );
+  opacity: 0.4;
+}
+
