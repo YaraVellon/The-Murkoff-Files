@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Recruit Reagents | The Murkoff Files</title>
+
+    <link rel="icon" type="image/x-icon" href="images/Murkoff_Logo_clean.webp">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+    <div class="screen"></div>
+
+    <header class="navbar">
+        <div class="nav-logo">
+            <a href="index.html" class="nav-logo">
+                <img src="images/murkoff.webp" alt="Murkov Logo" />
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="characters.html" class="dropbtn">CHARACTERS ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="prime-assets.html">Prime Assets</a></li>
+                    <li><a href="grunts.html">Grunts</a></li>
+                    <li><a href="specialists.html">Specialists</a></li>
+                    <li><a href="reagents.html">Reagents</a></li>
+                </ul>
+            </li>
+            <li><a href="tools.html">TOOLS</a></li>
+            <li><a href="trials.html">TRIALS</a></li>
+            <li><a href="updates.html">UPDATES</a></li>
+        </ul>
+    </header>
+
+    <main id="main-content" class="update-article">
+        <div class="update-wrapper">
+
+            <!-- Hero / Introducción -->
+            <div class="hero reveal-hero">
+                <h1 class="reveal-title">JOIN THE MURKOFF REAGENTS</h1>
+                <p class="reveal">Are you ready to step into the trials? Submit your application and become part of our elite operatives.</p>
+            </div>
+
+            <!-- Formulario de reclutamiento -->
+            <section class="reveal form">
+                <div>
+                    <h2>Reagent Application Form</h2>
+                    <form id="recruit-form" >
+                        <label for="name">Full Name:</label><br>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required ><br>
+
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required><br>
+
+                        <label for="experience">Relevant Experience / Skills:</label><br>
+                        <textarea id="experience" name="experience" rows="6" placeholder="List your experience" required></textarea><br>
+
+                        <label for="motivation">Why do you want to join Murkoff?</label><br>
+                        <textarea id="motivation" name="motivation" rows="4" placeholder="Your motivation"  required></textarea><br>
+
+                        <button type="submit" >Submit Application</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Mensaje de confirmación -->
+            <section id="thank-you" class="reveal" >
+                <h2>Application Received</h2>
+                <p>Thank you, Reagent. Your submission has been logged and will be reviewed by Murkoff Corporation.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="murkoff-footer">
+        <div class="footer-logo">
+            <img src="images/Murkoff_Logo_clean.webp" alt="Murkov Logo" />
+        </div>
+        <div class="footer-text">
+            <p>© 2025 Murkoff Corporation. All rights reserved.</p>
+            <p>Property of Murkoff Corporation — Unauthorized access will be logged and investigated.</p>
+            <p>> Building a better you. For the greater good. <span class="cursor">█</span></p>
+            <br>
+            <p>
+                <a href="privacidad.html" style="color:#00ff88; text-decoration: underline;">Privacidad</a> | 
+                <a href="legal.html" style="color:#00ff88; text-decoration: underline;">Legal</a> | 
+                <a href="404.html" style="color:#00ff88; text-decoration: underline;">404</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/background.js"></script>
+    
+</body>
+</html>

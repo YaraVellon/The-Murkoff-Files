@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Characters - The Murkoff Files</title>
+
+    <link rel="icon" type="image/x-icon" href="images/Murkoff_Logo_clean.webp">
+
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+        <div class="screen"> </div>
+
+    
+    <header class="navbar">
+                <div class="nav-logo">
+            <a href="index.html" class="nav-logo">
+                <img src="images/murkoff.webp" alt="Murkov Logo" />
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="characters.html" class="dropbtn">CHARACTERS ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="prime-assets.html">Prime Assets</a></li>
+                    <li><a href="grunts.html">Grunts</a></li>
+                    <li><a href="specialists.html">Specialists</a></li>
+                    <li><a href="reagents.html">Reagents</a></li>
+                </ul>
+            </li>
+            <li><a href="tools.html">TOOLS</a></li>
+            <li><a href="trials.html">TRIALS</a></li>
+            <li><a href="updates.html">UPDATES</a></li>
+        </ul>
+    </header>
+
+    <main id="main-content" class="update-article">
+        <div class="update-wrapper">
+
+            <h1 class="update-title reveal-title">
+            Hotfix Patch Notes | Invasion – October 28th
+            </h1>
+
+            <div class="update-meta reveal">
+            <time datetime="2025-10-28">October 28, 2025</time>
+            <span class="update-categories">The Outlast Trials • Hotfix</span>
+            </div>
+
+            <div class="update-header-image">
+            <img src="images/updates/up3.png" alt="Hotfix Invasion October 28th Header Image" class="reveal-hero">
+            </div>
+
+            <div class="update-content">
+            <p class="reveal">Greetings Reagents,</p>
+
+            <p class="reveal">
+                We have worked on various fixes, here is what is included in this most recent hotfix patch:
+            </p>
+
+            <ul class="reveal">
+                <li>Fixed an issue where players would occasionally stay immobile after a stab counter.</li>
+                <li>Fixed the friend Invasion system so it properly joins the target player every time.</li>
+                <li>Group Finder will now match players together that have the same “Global Invasion” Privacy Setting value.</li>
+                <li>Fixed the player Imposters always having the Blind Rig visible (now correctly shows the mimics rig).</li>
+                <li>Fixed an issue where kicking an Imposter performing a fatality on teammate with low health would not result in the imposter getting knocked down and killed.</li>
+                <li>Fixed an issue where Invasion tasks could be part of the Daily Tasks.</li>
+                <li>Fixed various issues related to Imposter player names appearing.</li>
+                <li>Fixed an issue with group invites being sent through Steam to non‑friends.</li>
+                <li>Removed “Triggered sound disturbance” from Imposter scoring.</li>
+            </ul>
+
+            <h2 class="reveal">Stun Changes:</h2>
+            <ul class="reveal">
+                <li>Increased radius of effect to player imposters to 2 m (was 1.5 m).</li>
+                <li>Reworked stun reaction animation on imposters. It is now 2 s longer for a total of 5.5 s (was 3.5 s).</li>
+            </ul>
+
+            <h2 class="reveal">Stab Changes:</h2>
+            <ul class="reveal">
+                <li>Imposter now have a longer reaction animation when countered (bottle/brick), giving a bigger window of opportunity for Reagent to escape.</li>
+                <li>Fixed an issue where Stab was causing more damage than intended when countered (62.5 instead of 50).</li>
+                <li>Slightly decreased range of Stab to 2 m (was 2.5 m) to match Slash range.</li>
+                <li>As victim of a Stab, the interface now correctly displays your health instead of the execution icon.</li>
+                <li>Reagents can now counter Stab (with bottle/brick) multiple times, unless they have 25 HP or less:
+                <ul>
+                    <li>If stabbed with 100 HP, the bottle/brick counter will put the Reagent to 50 HP.</li>
+                    <li>If stabbed with 50 HP to 26 HP, the bottle/brick counter will put Reagent to 1 HP.</li>
+                    <li>If stabbed with 25 HP or less, the bottle/brick counter is not possible.</li>
+                </ul>
+                </li>
+            </ul>
+
+            </div>
+
+        </div>
+    </main>
+
+<footer class="murkoff-footer">
+    <div class="footer-logo">
+        <img src="images/Murkoff_Logo_clean.webp" alt="Murkov Logo" />
+    </div>
+    <div class="footer-text">
+        <p>© 2025 Murkoff Corporation. All rights reserved.</p>
+        <p>Property of Murkoff Corporation — Unauthorized access will be logged and investigated.</p>
+        <p>> Building a better you. For the greater good. <span class="cursor">█</span></p>
+        <br>
+        <p>
+            <a href="privacidad.html" style="color:#00ff88; text-decoration: underline;">Privacidad</a> | 
+            <a href="legal.html" style="color:#00ff88; text-decoration: underline;">Legal</a> | 
+            <a href="404.html" style="color:#00ff88; text-decoration: underline;">404</a>
+        </p>
+    </div>
+</footer>
+
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+    <script src="js/background.js"></script>
+
+</body>
+</html>

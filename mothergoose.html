@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Characters - The Murkoff Files</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/Murkoff_Logo_clean.webp">
+
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styles.css" />
+
+</head>
+
+<body>
+        <div class="screen"> </div>
+
+    
+    <header class="navbar">
+                <div class="nav-logo">
+            <a href="index.html" class="nav-logo">
+                <img src="images/murkoff.webp" alt="Murkov Logo" />
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="characters.html" class="dropbtn">CHARACTERS ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="prime-assets.html">Prime Assets</a></li>
+                    <li><a href="grunts.html">Grunts</a></li>
+                    <li><a href="specialists.html">Specialists</a></li>
+                    <li><a href="reagents.html">Reagents</a></li>
+                </ul>
+            </li>
+            <li><a href="tools.html">TOOLS</a></li>
+            <li><a href="trials.html">TRIALS</a></li>
+            <li><a href="updates.html">UPDATES</a></li>
+        </ul>
+    </header>
+
+    <main id="main-content">
+        <h1>Mother Goose</h1>
+
+        <section class="character-summary">
+            <div>
+                <h2>Character Summary</h2>
+                <p>Mother Goose is a disturbing and enigmatic Prime Asset, notorious for her unnerving presence and unpredictable behavior. Once a psychologist studying human fear responses, she was transformed into an asset after experimental exposure to Murkoff’s psychoactive reagents. Her appearance is unsettling, and she often uses twisted nursery rhymes and whispers to disorient Reagents in the Trials.</p>
+            </div>
+        </section>
+
+        <section class="character-behavior">
+            <div>
+                <h2>Behavior in the Trials</h2>
+                <p>Mother Goose operates with psychological precision, manipulating the environment to confuse and terrify Reagents. She tends to patrol high-traffic areas slowly, creating fear zones with her whispers and sudden movements. Unlike other Prime Assets, she rarely attacks immediately, preferring to mentally disorient players first. When cornered, her attacks become erratic but lethal.</p>
+            </div>    
+        </section>
+
+        <section class="how-to-play-against">
+            <div>
+                <h2>How to Play Against Mother Goose</h2>
+                <ol>
+                    <li><strong>Stay calm:</strong> Her whispers and sudden appearances are designed to startle. Keep composure to avoid mistakes.</li>
+                    <li><strong>Use auditory cues:</strong> Listen for her singing or footsteps to track her movements.</li>
+                    <li><strong>Avoid tight spaces:</strong> She excels in confined areas where Reagents cannot maneuver easily.</li>
+                    <li><strong>Work in pairs:</strong> Isolation increases risk. Team coordination helps reduce fear effects.</li>
+                    <li><strong>Use distractions strategically:</strong> Throwing objects or triggering alarms can lure her away from objectives.</li>
+                    <li><strong>Observe patterns:</strong> Mother Goose has predictable hiding spots and patrol routes—learning them can help avoid direct confrontation.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    
+<footer class="murkoff-footer">
+    <div class="footer-logo">
+        <img src="images/Murkoff_Logo_clean.webp" alt="Murkov Logo" />
+    </div>
+    <div class="footer-text">
+        <p>© 2025 Murkoff Corporation. All rights reserved.</p>
+        <p>Property of Murkoff Corporation — Unauthorized access will be logged and investigated.</p>
+        <p>> Building a better you. For the greater good. <span class="cursor">█</span></p>
+        <br>
+        <p>
+            <a href="privacidad.html" style="color:#00ff88; text-decoration: underline;">Privacidad</a> | 
+            <a href="legal.html" style="color:#00ff88; text-decoration: underline;">Legal</a> | 
+            <a href="404.html" style="color:#00ff88; text-decoration: underline;">404</a>
+        </p>
+    </div>
+</footer>
+
+
+    <!-- Scripts -->
+    <script>
+        const thumbSlider = new Swiper(".thumb-slider", {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+        const mainSlider = new Swiper(".main-slider", {
+            spaceBetween: 10,
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+            swiper: thumbSlider,
+            },
+        });
+    </script>
+
+    <script src="js/animations.js"></script>
+    <script src="js/background.js"></script>
+
+</body>
+</html>

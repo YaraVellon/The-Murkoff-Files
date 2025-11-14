@@ -12,13 +12,23 @@
 </head>
 
 <body>
-    <div class="screen"> </div>
+        <div class="screen"> </div>
+
+    
     <header class="navbar">
-        <div class="nav-logo">
+                <div class="nav-logo">
             <a href="index.html" class="nav-logo">
                 <img src="images/murkoff.webp" alt="Murkov Logo" />
             </a>
         </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
         <ul class="nav-links">
             <li class="dropdown">
                 <a href="characters.html" class="dropbtn">CHARACTERS ▾</a>
@@ -38,18 +48,313 @@
     <main id="main-content">
         <h1>TOOLS</h1>
 
+        <section class="Rigs">
+            <div>
+                <h2>Stun</h2>
+
+                <details>
+                <summary><h3>How to use:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li>Before starting a Trial, you must equip one Rig in your load-out. You unlock it by talking to the vendor (Cornelius Noakes) and spending a “Voucher” when your Reagent levels up.</li>
+                    <li>During the Trial you can throw the Stun Rig. On use, it sends out an electric shock effect in a radius around the impact. Enemies caught in that area become stunned/disoriented for a time.</li>
+                    <li>The rig has a cooldown period, meaning you cannot throw it again until the cooldown expires.</li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Key stats:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Base stun duration:</strong> ~ 5 seconds*</li>
+                    <li><strong>Effect radius (base):</strong> ~ 3 m</li>
+                    <li><strong>Base cooldown:</strong> ~ 200 seconds</li>
+                    <li><strong>Noise radius:</strong> ~ 15 m</li>
+                    </ol>
+                    <h4>Special Note:</h4>
+                    <p>The effect does not work (or is severely weakened) on certain “Prime Asset” enemies (for example the “Jaeger” is noted as only briefly stunable). <br> “Imposter Reagents” receive one health-bar damage when hit by the stun effect (in modes where imposters exist).</p>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Upgrades:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Level 1:</strong> Base version – Emits an electric shock that stuns and disorients nearby enemies for a short duration.</li>
+                    <li><strong>Level 2:</strong> Increases explosion / effect radius (e.g., 3m → 6m).</li>
+                    <li><strong>Level 3:</strong> Also destroys enemy traps/mines within the blast.</li>
+                    <li><strong>Level 4:</strong> Extends stun duration (e.g., 5s → 8s).</li>
+                    <li><strong>Level 5:</strong> If no enemy is hit, the cooldown is instantly reduced by 50%.</li>
+                    <li><strong>Level 6:</strong> Players within the blast zone regain some battery/stamina.</li>
+                    <li><strong>Level 7:</strong> Decreases the cooldown time before next use.</li>
+                    <li><strong>Level 8:</strong> Rig is ready at trial start / after respawn.</li>
+                    </ol>
+                </div>
+                </details>
+            </div>
+
+            <div>
+                <img src="images/tools/stun.png" alt="Stun rig">
+            </div>
+        </section>
+
+        <section class="Rigs">
+            <div>
+                <h2>X-Ray</h2>
+
+                <details>
+                <summary><h3>How to use:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li>Activate X-Ray to see through walls: reveals enemies, objectives and consumables in its range (~15 m).</li>
+                    <li>Team members can be revealed / shared intel when upgraded.</li>
+                    <li>Has a cooldown (~45 seconds base) before reuse.</li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Key stats:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Base duration:</strong> ~ 8 seconds.</li>
+                    <li><strong>Base range:</strong> ~ 15 m.</li>
+                    <li><strong>Base cooldown:</strong> ~ 45 seconds. </li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Upgrades:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Level 1:</strong> Activate — basic X-Ray vision.</li>
+                    <li><strong>Level 2:</strong> Shared Intel — teammates see tagged enemies.</li>
+                    <li><strong>Level 3:</strong> Resource Intel — reveals nearby consumables (meds, batteries, etc.).</li>
+                    <li><strong>Level 4:</strong> Classified Intel — reveals sensitive items (documents, mines, traps).</li>
+                    <li><strong>Level 5:</strong> Extended Duration — increases duration (e.g., 8 → 12 s).</li>
+                    <li><strong>Level 6:</strong> Battery Transfer — using X-Ray recharges night vision battery.</li>
+                    <li><strong>Level 7:</strong> Decreased Cooldown — reduces reuse cooldown (e.g., 45 → 36 s).</li>
+                    <li><strong>Level 8:</strong> Prepared — rig is ready at trial start / after respawn.</li>
+                    </ol>
+                </div>
+                </details>
+            </div>
+
+            <div>
+                <img src="images/tools/xray.png" alt="X-Ray rig">
+            </div>
+        </section>
+
+        <section class="Rigs">
+            <div>
+                <h2>Barricade</h2>
+
+                <details>
+                <summary><h3>How to use:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li>Place a portable barricade on doors/windows to delay, block enemies, or open locked doors. </li>
+                    <li>Barricade can be destroyed if enemy breaks through; upgrades improve durability.</li>
+                    <li>Has installation time and cooldown before reuse.</li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Key stats:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Installation Time (base):</strong> ~ 3.5 seconds.</li>
+                    <li><strong>Base cooldown:</strong> ~ 45 seconds.</li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Upgrades:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Level 1:</strong> Activate — basic barricade placement.</li>
+                    <li><strong>Level 2:</strong> Decreased Cooldown — (45 → 36 s).</li>
+                    <li><strong>Level 3:</strong> Increased Resistance — barricades need extra bash to break.</li>
+                    <li><strong>Level 4:</strong> Quick Installation — faster setup (e.g., 3.5 → 2.5 s).</li>
+                    <li><strong>Level 5:</strong> Incoming Warning — you are pinged when enemy breaks barricade.</li>
+                    <li><strong>Level 6:</strong> Friendly Breach — breaking a barricade speeds up cooldown.</li>
+                    <li><strong>Level 7:</strong> Extra Barricade — can place two instead of one.</li>
+                    <li><strong>Level 8:</strong> Prepared — ready at trial start / after respawn.</li>
+                    </ol>
+                </div>
+                </details>
+            </div>
+
+            <div>
+                <img src="images/tools/barricade.png" alt="Barricade rig">
+            </div>
+        </section>
+
+        <section class="Rigs">
+            <div>
+                <h2>Jammer</h2>
+
+                <details>
+                <summary><h3>How to use:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li>Disable electronic devices (TVs, radios), unlock padlocks, doors and traps with the Jammer.</li>
+                    <li>Can be used on revives and to interfere with enemy equipment (with upgrades).</li>
+                    <li>Has a hack range (~2 m base) and cooldown (~90s base) depending on type of device.</li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Key stats:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Hack Range (base):</strong> ~ 2 m.</li>
+                    <li><strong>Base cooldown:</strong> ~ 90 seconds for many devices.</li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Upgrades:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Level 1:</strong> Activate — basic disabling/hacking.</li>
+                    <li><strong>Level 2:</strong> Pacemaker — auto-activate for self-revive or revive teammate from distance.</li>
+                    <li><strong>Level 3:</strong> Decreased Cooldown — reduce cooldown for all hack types.</li>
+                    <li><strong>Level 4:</strong> Improved Jammer — faster hack speeds.</li>
+                    <li><strong>Level 5:</strong> Long Distance — increased hack range (e.g., 2 m → 8 m).</li>
+                    <li><strong>Level 6:</strong> Rewire — turn some traps/devices against enemies.</li>
+                    <li><strong>Level 7:</strong> Corrupt Enemies — hack enemies to disrupt behavior.</li>
+                    <li><strong>Level 8:</strong> Prepared — ready at trial start / after respawn.</li>
+                    </ol>
+                </div>
+                </details>
+            </div>
+
+            <div>
+                <img src="images/tools/jammer.png" alt="Jammer rig">
+            </div>
+        </section>
+
+        <section class="Rigs">
+            <div>
+                <h2>Heal</h2>
+
+                <details>
+                <summary><h3>How to use:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li>Deploy the Heal Rig to restore health of yourself and teammates within its radius.</li>
+                    <li>Also slows or staggers nearby enemies depending on upgrade.</li>
+                    <li>Better for support play, especially in multiplayer trials.</li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Key stats:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Heal / Effect Radius:</strong> (varies by upgrade) — information not fully specified. </li>
+                    <li><strong>Cooldown:</strong> (varies) — typically support-style cooldowns. </li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Upgrades:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Level 1:</strong> Activate — basic heal area. </li>
+                    <li><strong>Level 2:</strong> (e.g., larger radius or extra effect) </li>
+                    <li><strong>Level 3:</strong> (improved heal speed or effect) </li>
+                    <li><strong>Level 4:</strong> (maybe extra support effects) </li>
+                    <li><strong>Level 5:</strong> (special effect: enemies slowed or staggers) </li>
+                    <li><strong>Level 6:</strong> (better assist effect) </li>
+                    <li><strong>Level 7:</strong> (reduced cooldown) </li>
+                    <li><strong>Level 8:</strong> Prepared — ready at trial start / after respawn. </li>
+                    </ol>
+                </div>
+                </details>
+            </div>
+
+            <div>
+                <img src="images/tools/heal.png" alt="Heal rig">
+            </div>
+        </section>
+
+        <section class="Rigs">
+            <div>
+                <h2>Blind</h2>
+
+                <details>
+                <summary><h3>How to use:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li>Deploy a Blind-mine device that emits smoke or a blinding effect when triggered by enemies.</li>
+                    <li>Best used as a trap ahead of time in high-traffic areas to avoid detection or chases.</li>
+                    <li>Has a deploy time and cooldown; slower to set up than some other rigs.</li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Key stats:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Deploy time (base):</strong> ~ something like 4-5 seconds (varies).</li>
+                    <li><strong>Cooldown:</strong> (varies) — typically higher than instant-use rigs. </li>
+                    </ol>
+                </div>
+                </details>
+
+                <details>
+                <summary><h3>Upgrades:</h3></summary>
+                <div class="content">
+                    <ol>
+                    <li><strong>Level 1:</strong> Activate — basic mine placement. </li>
+                    <li><strong>Level 2:</strong> (e.g., faster deployment) </li>
+                    <li><strong>Level 3:</strong> (e.g., larger radius or longer effect) </li>
+                    <li><strong>Level 4:</strong> (maybe extra effect: slows after smoke) </li>
+                    <li><strong>Level 5:</strong> (some additional effect) </li>
+                    <li><strong>Level 6:</strong> (support bonus) </li>
+                    <li><strong>Level 7:</strong> (reduced cooldown) </li>
+                    <li><strong>Level 8:</strong> Prepared — ready at trial start / after respawn. </li>
+                    </ol>
+                </div>
+                </details>
+            </div>
+
+            <div>
+                <img src="images/tools/blind.png" alt="Blind rig">
+            </div>
+        </section>
+
+
     </main>
     
-    <footer class="murkoff-footer">
-        <div class="footer-logo">
-            <img src="images/Murkoff_Logo_clean.webp" alt="Murkov Logo" />
-        </div>
-        <div class="footer-text">
-            <p>© 2025 Murkoff Corporation. All rights reserved.</p>
-            <p>Property of Murkoff Corporation — Unauthorized access will be logged and investigated.</p>
-            <p>> Building a better you. For the greater good. <span class="cursor">█</span></p>
-        </div>
-    </footer>
+<footer class="murkoff-footer">
+    <div class="footer-logo">
+        <img src="images/Murkoff_Logo_clean.webp" alt="Murkov Logo" />
+    </div>
+    <div class="footer-text">
+        <p>© 2025 Murkoff Corporation. All rights reserved.</p>
+        <p>Property of Murkoff Corporation — Unauthorized access will be logged and investigated.</p>
+        <p>> Building a better you. For the greater good. <span class="cursor">█</span></p>
+        <br>
+        <p>
+            <a href="privacidad.html" style="color:#00ff88; text-decoration: underline;">Privacidad</a> | 
+            <a href="legal.html" style="color:#00ff88; text-decoration: underline;">Legal</a> | 
+            <a href="404.html" style="color:#00ff88; text-decoration: underline;">404</a>
+        </p>
+    </div>
+</footer>
+
 
     <!-- Scripts -->
     <script src="js/animations.js"></script>
