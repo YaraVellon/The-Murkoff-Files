@@ -1,0 +1,8 @@
+robots_txt = """User-agent: *
+Allow: /
+
+Sitemap: https://yaravellon.github.io/The-Murkoff-Files/sitemap.xml
+"""
+
+with open("robots.txt", "w") as f:
+    f.write(robots_txt)
