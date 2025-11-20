@@ -287,7 +287,7 @@ section .text{
 }
 
 .character-images img {
-  width: 270px;   /* ancho fijo */
+  width: 250px;   /* ancho fijo */
   height: 400px;  /* alto fijo */
   object-fit: cover;
   transform: rotate(var(--angle)); /* mantiene la inclinación */
@@ -346,6 +346,7 @@ section .text{
 }
 
 .maps-images img {
+  max-width: 300px;
   width: 260px;         /* no excede el ancho del contenedor */
   height: auto;             /* mantiene proporción */
   object-fit: contain;      /* se ve completa la imagen */
