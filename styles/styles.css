@@ -277,70 +277,38 @@ section .text{
   margin: 0;
   text-align: left;
 }
-
-/* Contenedor de imágenes */
 .character-images {
   margin: 20px;
-  position: relative;
-  width: 60%;
-  height: 400px;
   display: flex;
+  flex-wrap: wrap; /* permite que las imágenes salten a la siguiente fila */
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: flex-start;
+  gap: 1rem; /* separación entre imágenes */
 }
 
-/* Imágenes con efecto apilado y ligera inclinación */
 .character-images img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  opacity: 0;
-  transform: translateX(100px) rotate(var(--angle));
+  width: 270px;   /* ancho fijo */
+  height: 400px;  /* alto fijo */
+  object-fit: cover;
+  transform: rotate(var(--angle)); /* mantiene la inclinación */
   transition: all 0.8s ease;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 0 12px rgba(0,0,0,0.6);
   background: 
     radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 100%),
     linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%) 0 0 / 8px 8px,
-    #1b1b1b; /* tono oscuro detrás */
+    #1b1b1b;
   filter: contrast(1.2) brightness(0.9);
 }
 
 /* Inclinaciones específicas */
-.character-images img:nth-child(1) {
-  right: 1rem;
-  --angle: 5deg;
-  z-index: 4;
-}
-.character-images img:nth-child(2) {
-  top: 0.4rem;
-  right: 15rem;
-  --angle: -3deg;
-  z-index: 3;
-}
-.character-images img:nth-child(3) {
-  right: 35rem;
-  --angle: 4deg;
-  z-index: 2;
-}
-.character-images img:nth-child(4) {
-  right: 54rem;
-  --angle: -2deg;
-  z-index: 1;
-}
+.character-images img:nth-child(1) { --angle: 5deg; }
+.character-images img:nth-child(2) { --angle: -3deg; }
+.character-images img:nth-child(3) { --angle: 4deg; }
+.character-images img:nth-child(4) { --angle: -2deg; }
 
-/* Cuando son visibles */
-.characters.visible .character-images img {
-  opacity: 1;
-  transform: translateX(0) rotate(var(--angle));
-}
 
-/* Efecto escalonado de aparición */
-.character-images img:nth-child(1) { transition-delay: 0.1s; }
-.character-images img:nth-child(2) { transition-delay: 0.3s; }
-.character-images img:nth-child(3) { transition-delay: 0.5s; }
-.character-images img:nth-child(4) { transition-delay: 0.7s; }
 
 .btn-access {
   display: inline-block;
@@ -368,24 +336,23 @@ section .text{
 @keyframes blinkAccess {
   50% { opacity: 0.5; }
 }
-
 .maps-images {
   margin: 20px;
-  position: relative;
-  width: 60%;
-  height: 400px;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  gap: 10px;
+  flex-wrap: wrap;         /* permite saltar a la siguiente fila */
+  justify-content: flex-start;
+  gap: 1rem;               /* espacio entre imágenes */
+  width: 60%;              /* ancho del contenedor */
 }
 
-/* Estado inicial: ocultas y desplazadas */
 .maps-images img {
-  height: 100%;
-  opacity: 0;
-  transform: translateX(100px);
+  width: 260px;         /* no excede el ancho del contenedor */
+  height: auto;             /* mantiene proporción */
+  object-fit: contain;      /* se ve completa la imagen */
+  opacity: 0;         /* estado inicial: oculto */
+  transform: translateX(100px); /* desplazamiento inicial para animación */
   transition: all 0.8s ease;
+  flex: 1 1 200px;          /* ancho base de 200px, pero se ajusta al contenedor */
 }
 
 /* Retraso progresivo en la aparición */
@@ -394,11 +361,12 @@ section .text{
 .maps-images img:nth-child(3) { transition-delay: 0.4s; }
 .maps-images img:nth-child(4) { transition-delay: 0.6s; }
 
-/* Estado visible: se muestran y se deslizan hacia su posición */
+/* Estado visible */
 .maps.visible .maps-images img {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 .tools-images{
   align-content: center;
@@ -1153,7 +1121,7 @@ a.post-preview__link {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   /* Mostrar hamburguesa solo en móvil/tablet */
   .hamburger {
